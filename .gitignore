@@ -1,0 +1,21 @@
+# Test results
+test-results/
+*.log
+
+# Temporary files
+*.tmp
+.DS_Store
+*~
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build artifacts
+build/
+dist/
+
+# Gist draft (not needed in repo)
+gist-manual-guide.md

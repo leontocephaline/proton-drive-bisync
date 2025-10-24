@@ -1,0 +1,27 @@
+[Unit]
+Description=Rclone Bisync for Proton Drive
+After=network-online.target
+Wants=network-online.target
+StartLimitIntervalSec=1800
+StartLimitBurst=3
+
+[Service]
+Type=oneshot
+ExecStart={{RCLONE_BIN}} bisync {{RCLONE_REMOTE}}:/ {{SYNC_DIR}} \
+  --create-empty-src-dirs \
+  --compare size,modtime \
+  --check-access \
+  --max-delete 10 \
+  --conflict-resolve newer \
+  --conflict-loser num \
+  --resilient \
+  --log-file {{CACHE_DIR}}/bisync.log \
+  --log-level INFO \
+  --track-renames \
+  --error-on-no-transfer
+ExecStartPost=/bin/sh -c 'touch {{SYNC_DIR}}/RCLONE_TEST && {{RCLONE_BIN}} copy {{SYNC_DIR}}/RCLONE_TEST {{RCLONE_REMOTE}}:/ >/dev/null 2>&1 || true'
+CacheDirectory={{CACHE_DIR}}
+RuntimeMaxSec=3600
+
+[Install]
+WantedBy=default.target

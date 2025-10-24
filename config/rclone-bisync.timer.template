@@ -1,0 +1,13 @@
+[Unit]
+Description=Run Rclone Bisync for Proton Drive
+Requires=rclone-bisync.service
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec={{SYNC_INTERVAL}}
+Persistent=true
+AccuracySec=1min
+RandomizedDelaySec=30
+
+[Install]
+WantedBy=timers.target
