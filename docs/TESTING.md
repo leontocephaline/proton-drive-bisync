@@ -30,22 +30,44 @@ This document describes how to test the Proton Drive bisync installer across mul
 - **podman** or **docker** as container backend
 - **git** and **bash**
 
-## Quick Test
+## Quick Syntax Test (Recommended)
 
-Run the automated test suite:
+The most reliable way to validate the scripts:
+
+```bash
+chmod +x test-syntax.sh
+./test-syntax.sh
+```
+
+This validates:
+- Script syntax (`bash -n`)
+- Help output
+- Template files
+- Documentation presence
+
+## Distrobox Testing (Experimental)
+
+Full cross-distro testing using containers:
 
 ```bash
 chmod +x test-distros.sh
 ./test-distros.sh
 ```
 
-This will:
-1. Create distrobox containers for each major distro family
-2. Clone the gist inside each container
-3. Install dependencies (git, curl, rclone, systemd)
-4. Validate script syntax
-5. Test help output
-6. Report results
+**Status**: Distrobox testing has complex timeout requirements (containers can take 10+ minutes to initialize). The test script includes 15-minute timeouts per distro, but results may vary based on system resources.
+
+**What it tests**:
+1. Creates distrobox containers for each major distro family
+2. Clones the repository inside each container  
+3. Validates script syntax
+4. Tests help output
+5. Tests systemd unit rendering (without actual installation)
+
+**Known limitations**:
+- Container initialization can be slow
+- Requires significant disk space and memory
+- Some distros may timeout on slower systems
+- Best run on systems with fast storage (SSD)
 
 ## Tested Distributions
 

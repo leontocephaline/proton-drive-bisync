@@ -1,5 +1,7 @@
 # Proton Drive Bisync for Linux
 
+> **⚠️ Disclaimer**: This is an independent community project and is **not affiliated with, endorsed by, or supported by Proton AG or Proton Drive**. This is a hobbyist project provided as-is with no warranty. Use at your own risk.
+
 Automated, bidirectional file synchronization between your Linux system and Proton Drive using `rclone bisync` and systemd user services.
 
 ## Features
@@ -94,4 +96,8 @@ MIT License - See [LICENSE](LICENSE)
 
 ---
 
-⭐ **Star this project** if you find it useful!
+## Support This Project
+
+⭐ **Star this repository** if you find it useful!
+
+If this project reaches **100+ stars**, I'll create a **Flatpak package** for easy installation across all Linux distributions via Flathub.
