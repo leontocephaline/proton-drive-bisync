@@ -1,14 +1,13 @@
 # Proton Drive Sync - Manual Setup Guide
 
-> **⚠️ Disclaimer**: This is an independent community project and is **not affiliated with, endorsed by, or supported by Proton AG or Proton Drive**. This is a hobbyist project provided as-is with no warranty. Use at your own risk.
+> **⚠️ Disclaimer**: This is an independent community project and is **not affiliated with**, endorsed by, or supported by Proton AG or Proton Drive. This is a hobbyist project provided as-is with no warranty. Use at your own risk.
 
 Quick reference for manually configuring Proton Drive bidirectional sync on Linux.
 
 > **⚡ Want an automated installer?**  
 > 👉 **Full Project: https://github.com/leontocephaline/proton-drive-bisync**  
 > Complete solution with one-command installation, systemd automation, multi-distro support, and comprehensive documentation.
->
-> ⭐ **Star the repo** if you find this useful! At 100+ stars, I'll create a Flatpak for easy installation.
+
 
 ---
 
